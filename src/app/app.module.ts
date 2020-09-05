@@ -6,10 +6,14 @@ import {AppComponent} from './app.component';
 import {ProfileModule} from './components/profile/profile.module';
 import {Error404Module} from './components/error404/error404.module';
 import {AngularAnimationsModule} from './components/angular-animations/angular-animations.module';
+import {HTTP_INTERCEPTORS} from '@angular/common/http';
+import {ApiInterceptor} from './interceptors/api.interceptor';
+import {HttpErrorInterceptor} from './interceptors/http-error.interceptor';
+import {MapModule} from './components/map/map.module';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
@@ -17,9 +21,15 @@ import {AngularAnimationsModule} from './components/angular-animations/angular-a
     ProfileModule,
     Error404Module,
     AngularAnimationsModule,
+    MapModule,
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [
+    {provide: HTTP_INTERCEPTORS, useClass: ApiInterceptor, multi: true},
+    {provide: HTTP_INTERCEPTORS, useClass: HttpErrorInterceptor, multi: true},
+  ],
+  bootstrap: [
+    AppComponent,
+  ]
 })
 export class AppModule {
 }
