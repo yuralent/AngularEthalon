@@ -1,0 +1,102 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+a {
+  color: @color-mid-blue;
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+  }
+}
+
+b,
+strong {
+  .font-bold();
+}
+
+body {
+  background: @color-very-light-grey;
+  color: @color-dark-blue;
+  position: relative;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  .font-regular();
+  overflow: auto;
+  overflow-x: hidden;
+}
+
+button {
+  cursor: pointer;
+  color: inherit;
+  padding: 0;
+  margin: 0;
+  font-size: 16px;
+  border: none;
+  background-color: transparent;
+  .font-regular();
+}
+
+button:disabled {
+  color: @color-mid-grey;
+  pointer-events: none;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+  .font-light();
+}
+
+h1 {
+  font-size: 48px;
+  line-height: 56px;
+}
+
+h2 {
+  font-size: 40px;
+  line-height: 48px;
+}
+
+h3 {
+  font-size: 32px;
+  line-height: 40px;
+}
+
+h4 {
+  font-size: 24px;
+  line-height: 32px;
+}
+
+hr {
+  margin: 0;
+  border: none;
+}
+
+p {
+  padding: 0;
+  margin: 0;
+}
+
+table {
+  border-spacing: 0;
+  border: none;
+}
+
+input[type=text] {
+  outline: none;
+  border: 0;
+  .font-regular();
+}
+
+img {
+  border: 0;
+  overflow: hidden;
+}

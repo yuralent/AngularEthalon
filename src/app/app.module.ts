@@ -10,6 +10,7 @@ import {HTTP_INTERCEPTORS} from '@angular/common/http';
 import {ApiInterceptor} from './interceptors/api.interceptor';
 import {HttpErrorInterceptor} from './interceptors/http-error.interceptor';
 import {MapModule} from './components/map/map.module';
+import {GulpModule} from './components/gulp/gulp.module';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import {MapModule} from './components/map/map.module';
     Error404Module,
     AngularAnimationsModule,
     MapModule,
+    GulpModule,
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: ApiInterceptor, multi: true},
