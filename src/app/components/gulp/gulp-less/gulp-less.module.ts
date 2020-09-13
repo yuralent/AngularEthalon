@@ -1,15 +1,13 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {ProfileComponent} from './profile.component';
+import {GulpLessRoutingModule} from './gulp-less-routing.module';
 
 
 @NgModule({
-  declarations: [
-    ProfileComponent
-  ],
   imports: [
     CommonModule,
-  ]
+    GulpLessRoutingModule
+  ],
 })
-export class ProfileModule {
+export class GulpLessModule {
 }

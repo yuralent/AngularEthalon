@@ -1,29 +1,23 @@
-import {BrowserModule} from '@angular/platform-browser';
+import {HTTP_INTERCEPTORS} from '@angular/common/http';
 import {NgModule} from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
 
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
-import {ProfileModule} from './components/profile/profile.module';
-import {Error404Module} from './components/error404/error404.module';
-import {AngularAnimationsModule} from './components/angular-animations/angular-animations.module';
-import {HTTP_INTERCEPTORS} from '@angular/common/http';
 import {ApiInterceptor} from './interceptors/api.interceptor';
 import {HttpErrorInterceptor} from './interceptors/http-error.interceptor';
-import {MapModule} from './components/map/map.module';
-import {GulpModule} from './components/gulp/gulp.module';
+import {DirectivesModule} from './directives/directives.module';
+import {AngularModule} from './components/angular/angular.module';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ProfileModule,
-    Error404Module,
-    AngularAnimationsModule,
-    MapModule,
-    GulpModule,
+    DirectivesModule,
+    AngularModule,
+  ],
+  declarations: [
+    AppComponent,
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: ApiInterceptor, multi: true},
