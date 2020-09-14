@@ -1,41 +1,51 @@
-<google-map
-  height="500px"
-  width="100%"
-  [zoom]="zoom"
-  [center]="center"
-  [options]="options"
-  (mapClick)="click($event)">
-  <map-marker #markerElem
-              *ngFor="let marker of markers"
-              [position]="marker.position"
-              [label]="marker.label"
-              [title]="marker.title"
-              [options]="marker.options"
-              (mapClick)="openInfo(markerElem, marker.info)">
-  </map-marker>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12 col-md-12">
+      <google-map
+        height="500px"
+        width="100%"
+        [zoom]="zoom"
+        [center]="center"
+        [options]="options"
+        (mapClick)="click($event)">
+        <map-marker #markerElem
+                    *ngFor="let marker of markers"
+                    [position]="marker.position"
+                    [label]="marker.label"
+                    [title]="marker.title"
+                    [options]="marker.options"
+                    (mapClick)="openInfo(markerElem, marker.info)">
+        </map-marker>
 
-  <map-info-window>
-    {{ infoContent }}
-  </map-info-window>
-</google-map>
+        <map-info-window>
+          {{ infoContent }}
+        </map-info-window>
+      </google-map>
+    </div>
 
-<button type="button"
-        class="btn btn-info"
-        (click)="zoomIn()">
-  Zoom in
-</button>
-<button type="button"
-        class="btn btn-info"
-        (click)="zoomOut()">
-  Zoom out
-</button>
-<button type="button"
-        class="btn btn-info"
-        (click)="logCenter()">
-  Log center
-</button>
-<button type="button"
-        class="btn btn-info"
-        (click)="addMarker()">
-  Add Marker
-</button>
+  </div>
+  <div class="row">
+    <div class="col-lg-12 col-md-12">
+      <button type="button"
+              class="btn btn-info"
+              (click)="zoomIn()">
+        Zoom in
+      </button>
+      <button type="button"
+              class="btn btn-info"
+              (click)="zoomOut()">
+        Zoom out
+      </button>
+      <button type="button"
+              class="btn btn-info"
+              (click)="logCenter()">
+        Log center
+      </button>
+      <button type="button"
+              class="btn btn-info"
+              (click)="addMarker()">
+        Add Marker
+      </button>
+    </div>
+  </div>
+</div>
