@@ -8,12 +8,14 @@ import {ApiInterceptor} from './interceptors/api.interceptor';
 import {HttpErrorInterceptor} from './interceptors/http-error.interceptor';
 import {DirectivesModule} from './directives/directives.module';
 import {AngularModule} from './components/angular/angular.module';
+import {PipesModule} from './pipes/pipes.module';
 
 @NgModule({
   imports: [
     BrowserModule,
     AppRoutingModule,
     DirectivesModule,
+    PipesModule,
     AngularModule
   ],
   declarations: [
