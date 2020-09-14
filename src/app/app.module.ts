@@ -14,7 +14,7 @@ import {AngularModule} from './components/angular/angular.module';
     BrowserModule,
     AppRoutingModule,
     DirectivesModule,
-    AngularModule,
+    AngularModule
   ],
   declarations: [
     AppComponent,

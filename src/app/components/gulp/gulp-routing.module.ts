@@ -8,7 +8,8 @@ const routes: Routes = [
     path: '', component: GulpComponent, children: [
       {
         path: '',
-        loadChildren: () => import(`./gulp-less/gulp-less.module`).then(m => m.GulpLessModule)
+        redirectTo: 'svgstore',
+        pathMatch: 'full'
       },
       {
         path: 'less',
