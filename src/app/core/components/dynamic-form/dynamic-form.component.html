@@ -1,0 +1,31 @@
+<form novalidate
+      [formGroup]="formGroup">
+  <ng-container *ngFor="let control of _formGroupModel?.controls"
+                [ngSwitch]="control.type">
+    <ng-container *initVar="formGroup.get(control.name) as formControl">
+      <!-- CONTENT (need to add some text in form between fields) -->
+      <div *ngSwitchCase="_formControlType.Content">
+        <ng-content *ngSwitchCase="_formControlType.Content"
+                    [select]="control.name">
+        </ng-content>
+      </div>
+      <!-- Text FIELD -->
+      <div *ngSwitchCase="_formControlType.Text">
+        <input type="text"
+               [formControl]="formGroup?.controls[control.name]"
+               [disabled]="control.disabled"
+               [required]="control.required"
+               [maxlength]="control.options[_formControlOption.MaxLength]"
+               [placeholder]="control.options[_formControlOption.Placeholder]"
+        />
+      </div>
+      <!-- CHECKBOX FIELD -->
+      <div *ngSwitchCase="_formControlType.Checkbox">
+        <input type="checkbox"
+               [disabled]="control.disabled"
+               [required]="control.required"
+        />
+      </div>
+    </ng-container>
+  </ng-container>
+</form>

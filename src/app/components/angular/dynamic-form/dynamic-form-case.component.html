@@ -1,0 +1,13 @@
+<dynamic-form [formGroupModel]="_model">
+  <ng-container monthlyPayment>
+    LOl
+  </ng-container>
+</dynamic-form>
+
+<button [disabled]="dynamicFormComponent?.formGroup.invalid"
+        (click)="_onSubmitForm()">
+  Submit form
+</button>
+<div style="width: 100%; margin: 16px 0; display: flex; justify-content: space-between; align-items: center">
+  {{_submitResult | json}}
+</div>

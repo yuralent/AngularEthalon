@@ -2,10 +2,10 @@ import {Component, OnInit, ViewChild} from '@angular/core'
 import {GoogleMap, MapInfoWindow, MapMarker} from '@angular/google-maps'
 
 @Component({
-  selector: 'app-map',
-  templateUrl: './map.component.html'
+  selector: 'map-case',
+  templateUrl: './map-case.component.html'
 })
-export class MapComponent implements OnInit {
+export class MapCaseComponent implements OnInit {
   @ViewChild(GoogleMap, {static: false}) map: GoogleMap;
   @ViewChild(MapInfoWindow, {static: false}) info: MapInfoWindow;
 

@@ -6,7 +6,6 @@ import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {ApiInterceptor} from './interceptors/api.interceptor';
 import {HttpErrorInterceptor} from './interceptors/http-error.interceptor';
-import {DirectivesModule} from './directives/directives.module';
 import {AngularModule} from './components/angular/angular.module';
 import {PipesModule} from './pipes/pipes.module';
 
@@ -14,9 +13,8 @@ import {PipesModule} from './pipes/pipes.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    DirectivesModule,
     PipesModule,
-    AngularModule
+    AngularModule,
   ],
   declarations: [
     AppComponent,
