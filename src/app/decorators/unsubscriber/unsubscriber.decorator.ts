@@ -19,7 +19,7 @@ export function Unsubscriber(): any {
         const cmp: ComponentDef<typeof cmpType> = getComponentProp(cmpType, 'ɵcmp');
         const cmpOndestroy: (() => void) | null = cmp.onDestroy;
         cmpType.prototype.destroyed$ = new Subject<void>();
-        cmp.onDestroy = function () {
+        cmp.onDestroy = () => {
             (this as any).destroyed$.next();
             if (cmpOndestroy !== null) {
                 cmpOndestroy.apply(this);

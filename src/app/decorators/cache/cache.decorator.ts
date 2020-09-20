@@ -1,6 +1,8 @@
 import {Observable, race, ReplaySubject} from 'rxjs';
 import {tap} from 'rxjs/operators';
 
+// https://dev.to/davidecavaliere/rxjs-caching-observables-with-a-decorator-12fe
+
 const DEFAULT_CACHE_OPTIONS: CacheOptions = {
   cacheTime: 60000,
 };
