@@ -37,8 +37,8 @@ gulp.task("svg", () => {
         ]
       };
     }))
-    .pipe(rename({ prefix: "icon-" }))
-    .pipe(svgstore({ inlineSvg: true }));
+    .pipe(rename({prefix: "icon-"}))
+    .pipe(svgstore({inlineSvg: true}));
 
   function fileContents(filePath, file) {
     return file.contents.toString();
@@ -46,7 +46,7 @@ gulp.task("svg", () => {
 
   return gulp
     .src("./src/index.html")
-    .pipe(inject(svgs, { transform: fileContents }))
+    .pipe(inject(svgs, {transform: fileContents}))
     .pipe(gulp.dest("src"));
 });
 
@@ -61,20 +61,20 @@ gulp.task("less", () =>
 gulp.task("less:hash", () => {
   const hash = getFileHash("./dist/");
   return gulp.src("./dist/*.css")
-    .pipe(rename({ suffix: `.${hash}` }))
+    .pipe(rename({suffix: `.${hash}`}))
     .pipe(gulp.dest("./dist"));
 });
 
 gulp.task("less:inject", () => {
   const target = gulp.src("./dist/index.html"),
-    src = gulp.src("./dist/custom.*.css", { read: false });
+    src = gulp.src("./dist/custom.*.css", {read: false});
 
   function fileContents(filePath, file) {
     return `<link id="uxCurrentLinkStylesheetID" rel="stylesheet" href="./${filePath.split("/dist/")[1]}">`;
   }
 
   return target
-    .pipe(inject(src, { transform: fileContents }), { relative: false })
+    .pipe(inject(src, {transform: fileContents}), {relative: false})
     .pipe(gulp.dest("dist"));
 });
 

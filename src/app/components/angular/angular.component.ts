@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ViewEncapsulation} from '@angular/core';
 import {Time} from '../../decorators/time/time.decorator';
 import {Unsubscriber} from '../../decorators/unsubscriber/unsubscriber.decorator';
 
@@ -6,6 +6,9 @@ import {Unsubscriber} from '../../decorators/unsubscriber/unsubscriber.decorator
 @Component({
   selector: 'app-angular',
   templateUrl: './angular.component.html',
+  styleUrls: ['./angular.component.css'],
+  host: {'class': 'app-angular'},
+  encapsulation: ViewEncapsulation.None,
 })
 export class AngularComponent implements OnInit {
 

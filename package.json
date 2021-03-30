@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "gulp svg && ng serve --port 4224",
-    "build": "gulp svg && node --max_old_space_size=4096 ./node_modules/@angular/cli/bin/ng build -c=production && npm run less",
+    "build": "gulp svg && node --max_old_space_size=4096 ./node_modules/@angular/cli/bin/ng build -c=production",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
@@ -32,6 +32,7 @@
     "gulp-svgmin": "^3.0.0",
     "gulp-svgstore": "^7.0.1",
     "jquery": "^3.5.1",
+    "less": "^3.12.2",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.2"
