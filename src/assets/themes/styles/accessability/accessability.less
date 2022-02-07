@@ -1,0 +1,7 @@
+/* Tone down the animation to avoid vestibular motion triggers like scaling or panning large objects. */
+@media (prefers-reduced-motion: reduce) {
+  .animation {
+    animation-name: dissolve;
+    transition: 0.0001ms;
+  }
+}

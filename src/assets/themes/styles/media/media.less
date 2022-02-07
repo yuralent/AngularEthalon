@@ -1,0 +1,21 @@
+@o2uk-xsmall-max-width: 599px;
+@o2uk-small-min-width: 600px;
+@o2uk-small-max-width: 959px;
+@o2uk-medium-min-width: 960px;
+@o2uk-medium-max-width: 1279px;
+@o2uk-large-min-width: 1280px;
+@o2uk-extra-large-min-width: 1920px;
+
+@o2uk-xsmall: ~"screen and (max-width: @{o2uk-xsmall-max-width})";
+@o2uk-not-xsmall: ~"screen and (min-width: @{o2uk-small-min-width})";
+@o2uk-small: ~"screen and (min-width: @{o2uk-small-min-width}) and (max-width: @{o2uk-small-max-width})";
+@o2uk-small-and-xsmall: ~"screen and (max-width: @{o2uk-small-max-width})";
+@o2uk-medium: ~"screen and (min-width: @{o2uk-medium-min-width}) and (max-width: @{o2uk-medium-max-width})";
+@o2uk-medium-and-small: ~"screen and (min-width: @{o2uk-small-min-width}) and (max-width: @{o2uk-medium-max-width})";
+@o2uk-medium-and-small-and-xsmall: ~"screen and (max-width: @{o2uk-medium-max-width})";
+@o2uk-large-and-medium: ~"screen and (min-width: @{o2uk-medium-min-width})";
+@o2uk-large: ~"screen and (min-width: @{o2uk-large-min-width})";
+@o2uk-extra-large: ~"screen and (min-width: @{o2uk-extra-large-min-width})";
+
+@o2uk-only-ie: ~"screen and (-ms-high-contrast: active), (-ms-high-contrast: none)";
+

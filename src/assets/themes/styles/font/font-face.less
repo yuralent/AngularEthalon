@@ -1,0 +1,14 @@
+.font-face(@file-name, @font-family, @font-weight: 400, @font-style: normal) {
+  @font-face {
+    font-family: "@{font-family}";
+    src: local("@{font-family}"), url("../../fonts/@{file-name}.woff2") format('woff2'),
+    local("@{font-family}"), url("../../fonts/@{file-name}.woff") format('woff');
+    font-display: swap;
+    font-weight: @font-weight;
+    font-style: @font-style;
+  }
+}
+
+.font-face(FrutigerLTStd45Light, 'Frutiger LT Std 45 Light', 400);
+.font-face(FrutigerLTStd55Roman, 'Frutiger LT Std 55 Roman', 500);
+.font-face(FrutigerLTStd65Bold, 'Frutiger LT Std 65 Bold', 600);
